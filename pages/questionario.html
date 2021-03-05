@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionario</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link href="../src/css/bootstrap.min.css"rel="stylesheet">
+</head>
+<body>
+    <header>    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Desafio HACKTOOLS</a>
+        </nav>
+    </header>
+    <div style="margin-top: 30px;" class="container">
+        <div id="form-wrapper">
+            
+        </div>
+        
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="../src/js/bootstrap.min.js""></script>
+<script>
+    
+    criarQuestionario();
+   
+    function criarQuestionario(){
+        var wrapper = document.getElementById('form-wrapper')
+        var quiz = JSON.parse(localStorage.getItem("apiData"));
+        questions = quiz.perguntas.map(item => {
+            return `
+                <p><strong>${item}<strong></p>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="resposta"> 
+                </div>
+            `
+        });
+        console.log(quiz)
+            let questionarioCard = `
+                <div id="data-row">
+                    <form style="background-color: #ffffff; border-radius: 5px;" method="POST" action="">
+                        <h1 class="text-center">Questionário - ${quiz.título}</h1>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="latitude">Latitude</label>
+                                    <input type="text" class="form-control" id="latitude" placeholder="Latitude">
+                                </div>
+                                <div class="col">
+                                <label for="latitude">Longitude</label>
+                                <input type="text" class="form-control" id="longitude" placeholder="Longitude">
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="dataCadastroResposta">Data da Resposta</label>
+                        <input type="date" class="form-control" id="dataCadastroResposta" placeholder="Data">
+                    </div>
+            
+                    ${questions.join('')}
+            
+                    
+                    <button type="submit" id="questionario" class="btn btn-primary">Responder</button>
+                    </form>
+
+            `
+            
+            wrapper.innerHTML += questionarioCard;
+
+    }
+    
+    getLocation();
+    
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML= "O seu navegador não suporta Geolocalização.";}
+    }
+
+    function showPosition(position) {
+        let latitude = document.getElementById("latitude").value = position.coords.latitude;
+        let longitude = document.getElementById("longitude").value = position.coords.longitude;
+    }
+</script>
+</html>
