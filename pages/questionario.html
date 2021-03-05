@@ -31,6 +31,7 @@
     function criarQuestionario(){
         var wrapper = document.getElementById('form-wrapper')
         var quiz = JSON.parse(localStorage.getItem("apiData"));
+        
         questions = quiz.perguntas.map(item => {
             return `
                 <p><strong>${item}<strong></p>
@@ -39,7 +40,7 @@
                 </div>
             `
         });
-        console.log(quiz)
+        
             let questionarioCard = `
                 <div id="data-row">
                     <form style="background-color: #ffffff; border-radius: 5px;" method="POST" action="">

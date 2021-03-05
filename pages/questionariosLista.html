@@ -41,13 +41,13 @@
 
     window.onload = criarlista();
 
-    
+    function saveId(id){
+        return window.localStorage.setItem("quizId", JSON.stringify(id));
+    }
     function criarlista(){
         let wrapper = document.getElementById('list-wrapper')
     
         let url = "http://localhost:8001/quiz/"
-
-        
 
         fetch(url)
             .then((response) => response.json())
@@ -56,14 +56,11 @@
             
             let list = data
 
-            function getId(id) {
-                ;
-            }
             
-
             for (let i in list){
                 
-                let questionarios = `*
+            
+                let questionarios = `
                     <div id="data-row">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
@@ -72,16 +69,13 @@
                             <p class="text">Criado por: <strong>${list[i].usuário}</strong></p>
                             <p class="text">Dia: <strong>${list[i].dataCadastroPergunta}</strong></p>
                             <p class="text">Quantidade de perguntas: <strong>${list[i].perguntas.length}<strong></p>
-                            <a href="./questionario.html" class="btn btn-block btn-dark" id="button">Responder</a>
+                            <a href="./questionario.html" class="btn btn-block btn-dark" onclick="saveId(${list[i].id})" id="button">Responder</a>
                         </div>
                     </div>
                     
                     </div>
                 `
-                $('#button').click(function(e) {
-                    e.preventDefault();
-                    localStorage.setItem("quizId", JSON.stringify(list[i].id));
-                })
+
                 wrapper.innerHTML += questionarios;
             }
         });
