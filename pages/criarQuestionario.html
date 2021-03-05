@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Questionário</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link href="../src/css/bootstrap.min.css"rel="stylesheet">
+</head>
+<body>
+    <header>    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Desafio HACKTOOLS</a>
+        </nav>
+    </header>
+    <div class="container">
+        <form style="background-color: #ffffff;" id="myForm" method="post">
+            <h1 class="text-center">QuizzzzzMaker</h1>
+            <hr>
+            <div class="form-group">
+                <label for="usuário">Digite seu nome</label>
+                <input type="text" class="form-control" id="usuário" name="usuário" placeholder="E.G: Fernando">
+            </div>
+            <div class="form-group">
+                <label for="título">Título do questionário</label>
+                <input type="text" class="form-control" id="título" name="título" placeholder="Escolha um título">
+            </div>
+            <div class="form-group">
+                <label for="dataCadastroPergunta">Selecione uma data</label>
+                <input type="date" class="form-control" id="dataCadastroPergunta" name="dataCadastroPergunta" placeholder="E.G: Fernando">
+            </div>
+            <div class="form-group" id="questions">
+                <label for="perguntas">Digite uma pergunta</label>
+                <input type="text" class="form-control" id="perguntas" name="perguntas[]" placeholder="E.G: Fernando">
+            </div>
+
+            <button type="button" onclick="novaPergunta()" class="btn btn-success">+ Perguntas?</button>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary">Enviar Questionário</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../src/js/bootstrap.min.js""></script>
+<script>
+function novaPergunta() {
+
+    const newQuestion = '<input style="margin-top: 10px;" type="text" class="form-control" id="perguntas" name="perguntas[]" placeholder="E.G: Fernando">';
+    document.getElementById('questions').innerHTML += newQuestion;
+}
+
+function criarQuestionario() {
+    let form = document.getElementById("myForm");
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const respostasQuiz = [];
+                    let quizRespotas = document.querySelectorAll('#respostas');
+                    quizRespotas.forEach((input) => input ? respostasQuiz.push(input.value) : respostasQuiz.push(""));
+                    let quizDataCadastroResposta = document.getElementsByName('dataCadastroResposta').value;
+                    let quizLatitude = document.getElementById('latitude').value;
+                    let quizLongitude = document. getElementById('longitude').value;
+
+                    let quizData = {
+                        localização: {
+                            latitude: quizLatitude,
+                            longitude: quizLongitude
+                        },
+                        dataCadastroResposta: quizDataCadastroResposta,
+                        respostas: respostasQuiz
+                    }
+                    axios.put(`http://localhost:8001/quiz/${quizId}/`, quizData).then((res) => {
+                     
+                        location.href = '/';
+                    }).catch(err => console.log(err));
+                });
+}
+</script>
+
+</html>
