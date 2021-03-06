@@ -48,7 +48,7 @@
     function criarQuestionario(){
         var wrapper = document.getElementById('form-wrapper')
         var quizId = JSON.parse(localStorage.getItem("quizId"));
-       
+       console.log(quizId)
         axios.get(`http://localhost:8001/quiz/${quizId}`).then((res) => {
             let quiz = res.data;
             questions = quiz.perguntas.map(item => {

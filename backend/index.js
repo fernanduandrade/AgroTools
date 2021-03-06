@@ -39,7 +39,8 @@ app.post('/quiz', (req, res) => {
         perguntas: perguntas,
 		localização: {},
 		dataCadastroResposta: "",
-		respostas: []
+		respostas: [],
+		respondido: false 
 
 	});
 

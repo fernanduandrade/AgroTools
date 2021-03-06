@@ -15,17 +15,18 @@
         </nav>
     </header>
     <div class="container">
-        <form style="background-color: #ffffff;" id="myForm" method="post">
+        <form style="background-color: #ffffff; margin-top: 30px;" id="myForm" method="post">
             <h1 class="text-center">QuizzzzzMaker</h1>
             <hr>
-            <div class="form-group">
-                <label for="usuário">Digite seu nome</label>
-                <input type="text" class="form-control" id="usuário" name="usuário" placeholder="E.G: Fernando">
-            </div>
             <div class="form-group">
                 <label for="título">Título do questionário</label>
                 <input type="text" class="form-control" id="título" name="título" placeholder="Escolha um título">
             </div>
+            <div class="form-group">
+                <label for="usuário">Digite seu nome</label>
+                <input type="text" class="form-control" id="usuário" name="usuário" placeholder="E.G: Fernando">
+            </div>
+            
             <div class="form-group">
                 <label for="dataCadastroPergunta">Selecione uma data</label>
                 <input type="date" class="form-control" id="dataCadastroPergunta" name="dataCadastroPergunta" placeholder="E.G: Fernando">
@@ -38,7 +39,7 @@
             <button type="button" onclick="novaPergunta()" class="btn btn-success">+ Perguntas?</button>
             
             <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary">Enviar Questionário</button>
+                <button type="submit" onclick="criarQuestionario()" class="btn btn-block btn-primary">Enviar Questionário</button>
             </div>
         </form>
     </div>
@@ -56,28 +57,27 @@ function novaPergunta() {
 
 function criarQuestionario() {
     let form = document.getElementById("myForm");
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const respostasQuiz = [];
-                    let quizRespotas = document.querySelectorAll('#respostas');
-                    quizRespotas.forEach((input) => input ? respostasQuiz.push(input.value) : respostasQuiz.push(""));
-                    let quizDataCadastroResposta = document.getElementsByName('dataCadastroResposta').value;
-                    let quizLatitude = document.getElementById('latitude').value;
-                    let quizLongitude = document. getElementById('longitude').value;
-
-                    let quizData = {
-                        localização: {
-                            latitude: quizLatitude,
-                            longitude: quizLongitude
-                        },
-                        dataCadastroResposta: quizDataCadastroResposta,
-                        respostas: respostasQuiz
-                    }
-                    axios.put(`http://localhost:8001/quiz/${quizId}/`, quizData).then((res) => {
-                     
-                        location.href = '/';
-                    }).catch(err => console.log(err));
-                });
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let questionsQuiz = []
+        let quizQuestion = document.querySelectorAll('#perguntas');
+        quizQuestion.forEach((input) => input ? questionsQuiz.push(input.value) : questionsQuiz.push(""));
+        let quizTitulo = document.getElementById('título').value;
+        let quizUsuario = document.getElementById('usuário').value;
+        let quizDataCadastroPergunta = document.getElementById('dataCadastroPergunta').value;
+        
+        let quizData = {
+            título: quizTitulo,
+            usuário: quizUsuario,
+            dataCadastroPergunta: quizDataCadastroPergunta,
+            perguntas: questionsQuiz
+        }
+        axios.post(`http://localhost:8001/quiz`, quizData).then((res) => {
+            console.log(res)
+            alert("criado")
+            location.href = '/';
+        }).catch(err => console.log(err));
+    });
 }
 </script>
 
