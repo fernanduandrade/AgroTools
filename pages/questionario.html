@@ -106,7 +106,8 @@
                             longitude: quizLongitude
                         },
                         dataCadastroResposta: quizDataCadastroResposta,
-                        respostas: respostasQuiz
+                        respostas: respostasQuiz,
+                        respondido: true
                     }
                     axios.put(`http://localhost:8001/quiz/${quizId}/`, quizData).then((res) => {
                      

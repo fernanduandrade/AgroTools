@@ -14,7 +14,8 @@
 		"dataCadastroResposta": "2021/02/28",
 		"respostas": [
 			"Billy"
-		]
+		],
+		"respondido": true
 	},
 	{
 		"id": "2",
@@ -33,7 +34,8 @@
 		"respostas": [
 			"Sim",
 			"Não possuo nenhum tipo de hobby"
-		]
+		],
+		"respondido": true
 	},
 	{
 		"id": "3",
@@ -50,9 +52,8 @@
 		],
 		"dataCadastroResposta": "2021/03/01",
 		"respostas": [
-			"23",
-			"4"
-		]
+		],
+		"respondido": false
 	},
 	{
 		"id": "4",
@@ -68,8 +69,9 @@
 		],
 		"dataCadastroResposta": "2021/02/29",
 		"respostas": [
-			"Sim"
-		]
+			
+		],
+		"respondido": false
 	},
 	{
 		"id": "5",
@@ -83,6 +85,7 @@
 		"dataCadastroResposta": "2021/03/02",
 		"respostas": [
 			"Sim uma gata, se chama Polly"
-		]
+		],
+		"respondido": true
 	}
 ]

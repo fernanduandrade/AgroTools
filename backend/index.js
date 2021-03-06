@@ -40,8 +40,7 @@ app.post('/quiz', (req, res) => {
 		localização: {},
 		dataCadastroResposta: "",
 		respostas: [],
-		respondido: false 
-
+		respondido: false
 	});
 
 	return res.sendStatus(200);
