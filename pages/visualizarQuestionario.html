@@ -11,19 +11,15 @@
 <body>
     <header>    
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">Desafio HACKTOOLS</a>
+            <a class="navbar-brand" href="../index.html">Desafio HACKTOOLS</a>
         </nav>
     </header>
 
     <main class="role">
         <section class="text-center">
-            <div class="container">
-                <h1 class=" welcome">LISTA DE QUESTIONÁRIOS RESPONDIDOS</h1>
-                <hr style="border-color: #ffffff;">    
-                <div class="container">
-                    <div id="list-wrapper">
-        
-                    </div>
+            <div class="container"> 
+                <div class="container" style="background-color: #ffffff" >
+                    <div id="list-wrapper"></div>
                 </div>    
             </div>
         </section>
@@ -36,41 +32,39 @@
 <script src="../src/js/bootstrap.min.js""></script>
 <script>
     
-    window.onload = criarQuestionario();
+    window.onload = viewQuizAnswer();
    
-    function criarQuestionario(){
+    function viewQuizAnswer(){
         var wrapper = document.getElementById('list-wrapper')
         var quizId = JSON.parse(localStorage.getItem("quizId"));
-       console.log(quizId)
+
         axios.get(`http://localhost:8001/quiz/${quizId}`).then((res) => {
-            let quiz = res.data;
-            respostas = quiz.respostas.map(item => {
-                return `
-                    <p><strong>${item}<strong></p>
-                    
-                `
-            });
-            perguntas = quiz.perguntas.map(item => {
-                return `
-                    <p><strong>${item}<strong></p>
-                    
-                `
-            });
-            const allThem = `
-                <p class="text">${perguntas.join('')} | ${respostas.join('')}</p>
-            ` 
+            const quiz = res.data;
             
-                let questionarioCard = `
-                    <div id="data-row"> 
-                        <div style="background-color: #ffffff" class="container">
-                            <h1 class="text-center">Questionário - ${quiz.título}</h1>
-                            ${allThem}
-                            
-                        </div>
-                    </div>
+            quizResult = quiz.perguntas.map(pergunta => {
+                return quiz.respostas.map(resposta => {
+                    return`
+                    <p class="question"><strong>${pergunta}<strong></p>
+                    <p class="answer">${resposta}</p> 
                 `
-                
-                wrapper.innerHTML += questionarioCard;
+
+                });
+            });
+            console.log(quizResult);
+
+            let quizCard = `
+            <div id="data-row"> 
+                <div class="container">
+                    <h1 class="text-center">${quiz.título}</h1>
+                    <p>respondido dia: ${quiz.dataCadastroResposta}</p> <br>
+                    <p>${quizResult[0].join('')}</p>
+                </div>
+            </div>
+            `
+        
+            wrapper.innerHTML += quizCard;
+
+            
                 
         }).catch(err => console.log(err));
     }

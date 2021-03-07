@@ -10,11 +10,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
-
+//GET - Pegar todos questionários
 app.get('/quiz',(req, res) => {
 	res.json(DB)
 });
 
+//GET - Pegar questionário único
 app.get('/quiz/:id', (req,res) => {
 	const id = req.params.id;
 
@@ -27,7 +28,7 @@ app.get('/quiz/:id', (req,res) => {
 	}
 });
 
-//POST USUÁRIO
+//POST - Para os questionários
 app.post('/quiz', (req, res) => {
 	const {título, usuário, dataCadastroPergunta, perguntas} = req.body
 
@@ -46,13 +47,11 @@ app.post('/quiz', (req, res) => {
 	return res.sendStatus(200);
 });
 
-//PUT RESPOSTAS
+//PUT - Para as respostas
 app.put('/quiz/:id', (req, res) => {
 	const id  = req.params.id;
-    console.log(id)
 
-	let quizId = DB.find(quiz => quiz.id === id)
-	console.log(quizId)
+	let quizId = DB.find(quiz => quiz.id === id);
     
 	const {localização, dataCadastroResposta, respostas} = req.body;
 
@@ -65,12 +64,10 @@ app.put('/quiz/:id', (req, res) => {
 	} catch(err) {
 		console.error(err);
 	}
-	console.log(quizId)
-	return res.sendStatus(200);
 
+	return res.sendStatus(200);
 });
 
 app.listen(port, () => {
 	console.log(`Servidor rodando na porta ${port}`)
 });
-
