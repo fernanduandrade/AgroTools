@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Questionários</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
     <link rel="stylesheet" href="../src/css/style.css">
     <link href="../src/css/bootstrap.min.css"rel="stylesheet">
 </head>
@@ -58,26 +59,27 @@
             let list = data
 
             
-            for (let i in list){
-                
-            
-                let questionarios = `
-                    <div id="data-row">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">${list[i].título}</h5>
-                            <hr>  
-                            <p class="text">Criado por: <strong>${list[i].usuário}</strong></p>
-                            <p class="text">Dia: <strong>${list[i].dataCadastroPergunta}</strong></p>
-                            <p class="text">Quantidade de perguntas: <strong>${list[i].perguntas.length}<strong></p>
-                            <a href="./questionario.html" class="btn btn-block btn-dark" onclick="saveId('${list[i].id}')" id="button">Responder</a>
-                        </div>
-                    </div>
+                for (let i in list){
                     
-                    </div>
-                `
+                    if(list[i].respondido === false) {
+                    let questionarios = `
+                        <div id="data-row">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">${list[i].título}</h5>
+                                <hr>  
+                                <p class="text">Criado por: <strong>${list[i].usuário}</strong></p>
+                                <p class="text">Dia: <strong>${list[i].dataCadastroPergunta}</strong></p>
+                                <p class="text">Quantidade de perguntas: <strong>${list[i].perguntas.length}<strong></p>
+                                <a href="./questionario.html" class="btn btn-block btn-dark" onclick="saveId('${list[i].id}')" id="button">Responder</a>
+                            </div>
+                        </div>
+                        
+                        </div>
+                    `
 
-                wrapper.innerHTML += questionarios;
+                    wrapper.innerHTML += questionarios;
+                }
             }
         });
     }

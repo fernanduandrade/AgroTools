@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Questionário</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
     <link rel="stylesheet" href="../src/css/style.css">
     <link href="../src/css/bootstrap.min.css"rel="stylesheet">
 </head>
@@ -47,6 +48,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="../src/js/bootstrap.min.js"></script>
 <script>
 function novaPergunta() {
@@ -73,12 +75,12 @@ function criarQuestionario() {
             perguntas: questionsQuiz,
         }
         axios.post(`http://localhost:8001/quiz`, quizData).then((res) => {
-            console.log(res)
-            alert("criado")
-            location.href = '../index.html';
+            swal("Questionário criado com sucesso!");
+            setTimeout(function() {
+                location.href = '../index.html';
+            }, 3000);
         }).catch(err => console.log(err));
     });
 }
 </script>
-
 </html>
