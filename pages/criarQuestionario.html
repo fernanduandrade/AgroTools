@@ -70,12 +70,12 @@ function criarQuestionario() {
             título: quizTitulo,
             usuário: quizUsuario,
             dataCadastroPergunta: quizDataCadastroPergunta,
-            perguntas: questionsQuiz
+            perguntas: questionsQuiz,
         }
         axios.post(`http://localhost:8001/quiz`, quizData).then((res) => {
             console.log(res)
             alert("criado")
-            location.href = '/';
+            location.href = '../index.html';
         }).catch(err => console.log(err));
     });
 }

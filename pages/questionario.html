@@ -82,7 +82,6 @@
                 
                         ${questions.join('')}
                 
-                        
                         <button type="submit" id="questionario" class="btn btn-primary btn-block">ENVIAR RESPOTAS</button>
                         </form>
     
@@ -98,8 +97,7 @@
                     quizRespotas.forEach((input) => input ? respostasQuiz.push(input.value) : respostasQuiz.push(""));
                     let quizDataCadastroResposta = document.getElementsByName('dataCadastroResposta').value;
                     let quizLatitude = document.getElementById('latitude').value;
-                    let quizLongitude = document. getElementById('longitude').value;
-
+                    let quizLongitude = document.getElementById('longitude').value;
                     let quizData = {
                         localização: {
                             latitude: quizLatitude,
@@ -110,8 +108,8 @@
                         respondido: true
                     }
                     axios.put(`http://localhost:8001/quiz/${quizId}/`, quizData).then((res) => {
-                     
-                        location.href = '/';
+                        alert('respondido com sucesso');
+                        location.href = '../index.html';
                     }).catch(err => console.log(err));
                 });
                 

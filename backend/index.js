@@ -53,13 +53,14 @@ app.put('/quiz/:id', (req, res) => {
 
 	let quizId = DB.find(quiz => quiz.id === id);
     
-	const {localização, dataCadastroResposta, respostas} = req.body;
-
+	const {localização, dataCadastroResposta, respostas, respondido} = req.body;
 	try {
 
 		quizId.localização = localização;
 		quizId.dataCadastroResposta = dataCadastroResposta;
 		quizId.respostas = respostas;
+		quizId.respondido = respondido
+
 
 	} catch(err) {
 		console.error(err);
