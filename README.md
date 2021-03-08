@@ -14,22 +14,22 @@ Os endpoints da API são:
 + Exemplo do Resquest/Get (application/json)
     + Body 
         {
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "1",
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"título": &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Quiz nº 1",
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"usuário": "Fernando",
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dataCadastroPergunta": "2021/02/03",
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"localização": {
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"latitude": "-5.1697377",
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "longitude": "-41.703652299999995"
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"perguntas": [
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Qual o nome do seu primeiro pet?"
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dataCadastroResposta": "2021/02/28",
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;respostas": [
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Billy"
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"respondido": true
+            "id": "1",
+            "título": "Quiz nº 1",
+            "usuário": "Fernando",
+            "dataCadastroPergunta": "2021/02/03",
+            "localização": {
+                "latitude": "-5.1697377",
+                "longitude": "-41.703652299999995"
+            },
+            "perguntas": [
+                "Qual o nome do seu primeiro pet?"
+            ],
+            "dataCadastroResposta": "2021/02/28",
+            respostas": [
+                "Billy"
+            ],
+            "respondido": true
             }
 ## O app
 **Criando um questionário**
