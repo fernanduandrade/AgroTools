@@ -13,6 +13,7 @@ Os endpoints da API são:
 
 + Exemplo do Resquest/Get (application/json)
     + Body 
+        ```text
         {
             "id": "1",
             "título": "Quiz nº 1",
@@ -30,7 +31,8 @@ Os endpoints da API são:
                 "Billy"
             ],
             "respondido": true
-            }
+        }
+        ```
 ## O app
 **Criando um questionário**
 
