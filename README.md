@@ -2,6 +2,18 @@
 
 O quiz-maker é um web app para responder e criar questionários baseado no desafio do agrotools.
 
+## :heart: Como usar
+### :computer: Instale as dependências necessárias:
+```sh
+cd backend/ && npm install
+```
+
+## :computer: Rode o servidor
+
+```
+npm run start
+```
+
 ## Back-end API
 Os endpoints da API são:
 |Rotas| Método | Descrição |
