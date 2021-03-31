@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Questionário</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/form.css">
+    <link href="../src/css/bootstrap.min.css"rel="stylesheet">
+</head>
+<body>
+    <header>    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="../index.html">Desafio AGROTOOLS</a>
+        </nav>
+    </header>
+    <div class="container">
+        <form id="main-form" class="rounded" method="post">
+            <h1 class="text-center">QUIZ-MAKER</h1>
+            <hr>
+            <div class="container">
+                <div class="form-group">
+                    <label class="label-text">Título do questionário</label>
+                    <input type="text" class="form-control" id="título" name="título" placeholder="Escolha um título">
+                </div>
+                <div class="form-group">
+                    <label class="label-text">Digite seu nome</label>
+                    <input type="text" class="form-control" id="usuário" name="usuário" placeholder="Rodrigo">
+                </div>
+                
+                <div class="form-group">
+                    <label class="label-text">Selecione uma data</label>
+                    <input type="date" class="form-control" id="dataCadastroPergunta" name="dataCadastroPergunta">
+                </div>
+                <div class="form-group" id="questions">
+                    <label class="label-text">Digite uma pergunta</label>
+                    <input type="text" class="form-control" id="perguntas" name="perguntas[]" placeholder="Qual ano você teve seu primeiro pet?">
+                </div>
+    
+                <div class="form-group">
+                    <button type="button" onclick="newQuestion()" class="btn btn-info">Adicionar outra perguntas?</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="sendQuestion()" class="btn btn-block btn-primary">Enviar Questionário</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="../src/js/questionMaker.js"></script>
+</html>

@@ -12,7 +12,7 @@ app.use(cors());
 
 //GET - Pegar todos questionários
 app.get('/quiz',(req, res) => {
-	res.json(DB)
+	res.json(DB);
 });
 
 //GET - Pegar questionário único
@@ -22,9 +22,8 @@ app.get('/quiz/:id', (req,res) => {
 	if(!id) {
 		res.sendStatus(400);
 	} else {
-		const quizId = DB.find(quiz => quiz.id === id)
-		res.json(quizId)
-		res.sendStatus(200);
+		const quizId = DB.find(quiz => quiz.id === id);
+		res.json(quizId);
 	}
 });
 
