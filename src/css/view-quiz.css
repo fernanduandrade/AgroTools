@@ -3,6 +3,17 @@
     background-color: #ffffff
 }
 
-.question {
-    background-color: yellow;
+#list-wrapper {
+    max-height: 800px;
 }
+
+.question {
+    font-weight: bold;
+    background-color: yellow;
+    border-bottom: solid 1px black;
+}
+
+.quiz-container {
+    margin-top: 10px;
+}
+

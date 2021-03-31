@@ -1,7 +1,7 @@
 window.onload = viewQuizAnswered();
  
 function viewQuizAnswered(){
-    const wrapper = document.getElementById('list-wrapper')
+    const wrapper = document.getElementById('list-wrapper') 
     const quizId = JSON.parse(localStorage.getItem("quizId"));
 
     axios.get(`http://localhost:8001/quiz/${quizId}`).then((res) => {
@@ -11,9 +11,11 @@ function viewQuizAnswered(){
         quizResult = quiz.perguntas.map(pergunta => {
             return quiz.respostas.map(resposta => {
                 return`
-                <p class="question"><strong>${pergunta}<strong></p>
-                <p class="answer">${resposta}</p> 
-            `
+                 <div  class="border border-dark quiz-container">
+                     <p class="question">${pergunta}</p>
+                     <p class="answer">${resposta}</p>
+                 </div> 
+		`
             });
         });
 
@@ -21,8 +23,10 @@ function viewQuizAnswered(){
             <h1 class="text-center">${quiz.título}</h1>
             <hr>
             <p><strong>Respondido Dia: ${quiz.dataCadastroResposta}<strong></p> 
-            <p id="cidade"></p> 
-            <p>${quizResult[0].join('')}</p>
+            <p id="cidade"></p>
+           
+            ${quizResult[0].join('')}       
+            
         `
         wrapper.innerHTML += quizCard;
 
