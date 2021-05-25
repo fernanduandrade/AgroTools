@@ -8,24 +8,19 @@ function viewQuizAnswered(){
 
         const quiz = res.data;
         
-        quizResult = quiz.perguntas.map(pergunta => {
-            return quiz.respostas.map(resposta => {
-                return`
-                 <div  class="border border-dark quiz-container">
-                     <p class="question">${pergunta}</p>
-                     <p class="answer">${resposta}</p>
-                 </div> 
-		`
-            });
-        });
+        quizQuestions = quiz.perguntas.map(pergunta => `<p class="question">${pergunta}</p>`);
+        quizAnswers = quiz.respostas.map(resposta => `<p class="answer">${resposta}</p>`);
 
         const quizCard = `
             <h1 class="text-center">${quiz.título}</h1>
             <hr>
             <p><strong>Respondido Dia: ${quiz.dataCadastroResposta}<strong></p> 
             <p id="cidade"></p>
+            <div  class="border border-dark">
+                ${quizQuestions.join('')}     
+                ${quizAnswers.join('')}    
+            </div>
            
-            ${quizResult[0].join('')}       
             
         `
         wrapper.innerHTML += quizCard;

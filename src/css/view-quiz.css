@@ -10,10 +10,5 @@
 .question {
     font-weight: bold;
     background-color: yellow;
-    border-bottom: solid 1px black;
+    border: solid 1px black;
 }
-
-.quiz-container {
-    margin-top: 10px;
-}
-
