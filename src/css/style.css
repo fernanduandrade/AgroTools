@@ -69,6 +69,9 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
 
+.u-margin-top-small {
+  margin-top: 2.1rem !important; }
+
 .u-margin-top-big {
   margin-top: 8rem !important; }
 
@@ -77,10 +80,10 @@ body {
 
 .section-options {
   padding: 20rem 0;
-  transform: skew(-7deg);
-  margin-top: -45rem; }
+  margin-top: -45rem;
+  transform: skewY(-7deg); }
   .section-options > * {
-    transform: skew(7deg); }
+    transform: skewY(7deg); }
 
 .feature-option {
   background-color: rgba(255, 255, 255, 0.8);
@@ -89,8 +92,7 @@ body {
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: transform .3s;
-  overflow: hidden; }
+  transition: transform .3s; }
   .feature-option__icon {
     font-size: 6rem;
     margin-bottom: .5rem;
@@ -101,11 +103,41 @@ body {
   .feature-option:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
+.btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.9rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  border: none;
+  cursor: pointer; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.7);
+    opacity: 0; }
+
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--purple {
+  background-color: #93329e;
+  color: #fff; }
+  .btn--purple:hover {
+    background-color: #fff;
+    color: #93329e; }
+
 .header {
-  height: 95vh;
+  height: 80vh;
   position: relative; }
   .header__text-box {
-    top: 30%;
+    top: 20%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
