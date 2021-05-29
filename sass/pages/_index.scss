@@ -1,0 +1,10 @@
+.section-options {
+    
+    padding: 20rem 0;
+    transform: skew(-7deg);
+    margin-top: -45rem;
+    
+    & > * {
+        transform: skew(7deg);
+    }
+}
