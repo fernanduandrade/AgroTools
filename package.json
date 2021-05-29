@@ -1,0 +1,12 @@
+{
+  "name": "quiz_maker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "csass-index": "node-sass ./sass/main.scss ./src/css/index.css -w"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}
