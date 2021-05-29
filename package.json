@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "csass-index": "node-sass ./sass/main.scss ./src/css/index.css -w"
+    "csass": "node-sass ./sass/main.scss ./src/css/style.css -w"
   },
   "dependencies": {
     "node-sass": "^6.0.0"
