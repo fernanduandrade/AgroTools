@@ -12,9 +12,8 @@
         font-family: inherit;
         color: inherit;
         border-radius: 3px;
+        border: 1.8px solid $color-tertiary;
         background-color: rgba($color-white, .5);
-        border: none;
-        border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
         transition: all .3s;

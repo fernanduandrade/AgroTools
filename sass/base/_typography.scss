@@ -45,3 +45,19 @@ body {
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
 }
+
+.heading-primary-2 {
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 4rem;
+        font-weight: 400;
+        letter-spacing: 1rem;
+        border-bottom: 1px solid $color-white;
+    }
+
+}
