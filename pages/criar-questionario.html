@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Questionário</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="../src/css/style.css">
-    <link rel="stylesheet" href="../src/css/form.css">
-    <link href="../src/css/bootstrap.min.css"rel="stylesheet">
+    <title>Quiz Maker | AgroTools</title>
 </head>
+
 <body>
-    <header>    
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="../index.html">Desafio AGROTOOLS</a>
-        </nav>
-    </header>
-    <div class="container">
-        <form id="main-form" class="rounded" method="post">
-            <h1 class="text-center">QUIZ-MAKER</h1>
-            <hr>
-            <div class="container">
-                <div class="form-group">
-                    <label class="label-text">Título do questionário</label>
-                    <input type="text" class="form-control" id="título" name="título" placeholder="Escolha um título">
-                </div>
-                <div class="form-group">
-                    <label class="label-text">Digite seu nome</label>
-                    <input type="text" class="form-control" id="usuário" name="usuário" placeholder="Rodrigo">
-                </div>
-                
-                <div class="form-group">
-                    <label class="label-text">Selecione uma data</label>
-                    <input type="date" class="form-control" id="dataCadastroPergunta" name="dataCadastroPergunta">
-                </div>
-                <div class="form-group" id="questions">
-                    <label class="label-text">Digite uma pergunta</label>
-                    <input type="text" class="form-control" id="perguntas" name="perguntas[]" placeholder="Qual ano você teve seu primeiro pet?">
-                </div>
-    
-                <div class="form-group">
-                    <button type="button" onclick="newQuestion()" class="btn btn-info">Adicionar outra perguntas?</button>
+
+    <main>
+        <section class="section-form">
+            <div class="row">
+                <div class="quiz">
+                    <div class="quiz__form">
+                        <form class="form" method="post">
+
+                            <div class=" u-margin-bottom-medium">
+                                <h2 class="heading-secondary">
+                                    Crie um quiz agora
+                                </h2>
+                            </div>
+
+                            <div class="form__group ">
+                                <input type="text" class="form__input" id="título" name="título"
+                                    placeholder="Título do questionário">
+                                <label class="form__label">Título do questionário</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="usuário" name="usuário"
+                                    placeholder="Nome" required>
+                                <label class="form__label">Nome</label>
+                            </div>
+
+                            <div class="form__group">
+                                <input type="date" class="form__input" id="dataCadastroPergunta"
+                                    name="dataCadastroPergunta" required>
+                                <label class="form__label">Escolha uma data</label>
+                            </div>
+                            <div class="form__group" id="questions">
+                                <input type="text" class="form__input" id="perguntas" name="perguntas[]"
+                                    placeholder="Qual ano você teve seu primeiro pet?" required>
+                                <label class="form__label">Qual ano você teve seu primeiro pet?</label>
+                            </div>
+
+                            <div class="form__group">
+                                <a href="#" onclick="newQuestion()" class="btn-text">Adicionar pergunta +</a>
+                            </div>
+
+                            <div class="form_group">
+                                <button type="submit" onclick="sendQuestion()" class="btn btn--purple">Enviar
+                                    Questionário</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <button type="submit" onclick="sendQuestion()" class="btn btn-block btn-primary">Enviar Questionário</button>
-            </div>
-        </form>
-    </div>
+        </section>
+    </main>
+
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="../src/js/questionMaker.js"></script>
+
 </html>

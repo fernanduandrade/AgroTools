@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.section-form {
+    padding: 3.5rem 0 5rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    background-color: $color-white-3;
+    width: 90vw;
+}
+
+.quiz {
+    height: 90rem;
+
+    &__form {
+        width: 100%;
+        padding: 2rem 6rem;
+    }
+}
