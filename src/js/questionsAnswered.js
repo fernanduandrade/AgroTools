@@ -5,7 +5,7 @@ function saveId(id){
 }
 
 function questionAnswered(){
-    const wrapper = document.getElementById('list-wrapper');
+    const wrapper = document.getElementById('answeredQuizes');
     const apiUrl = "http://localhost:8001/quiz/";
 
     axios.get(apiUrl).then((res) => {
@@ -16,14 +16,21 @@ function questionAnswered(){
             if(quizAnswered[i].respondido ===  true) {
         
                 let questionarios = `
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">${quizAnswered[i].título}</h5>
-                            <hr>  
-                            <p class="text">Respondido: <strong>${quizAnswered[i].dataCadastroResposta}</strong></p>
-                            <a href="./visualizar-questionario.html" class="btn btn-block btn-dark" onclick="saveId('${quizAnswered[i].id}')" id="button">Ver</a>
+                    <div class="card u-margin-bottom-small">
+                        <h4 class="card__heading">
+                            <span class="card__heading-span card__heading-span--1">
+                                ${quizAnswered[i].título}
+                            </span>
+                        </h4>
+                        <div class="card__details">
+                            <ul>
+                                <li><b>Criado por:</b> ${quizAnswered[i].usuário}</li>
+                                <li><b>Respondido dia:</b> ${quizAnswered[i].dataCadastroResposta}</li>
+                            </ul>
                         </div>
+                        <a href="./visualizar-questionario.html" class="btn-card" onclick="saveId('${quizAnswered[i].id}')" id="button">Ver resultado &rarr;</a>
                     </div>
+
                 `
                 wrapper.innerHTML += questionarios;
             } 

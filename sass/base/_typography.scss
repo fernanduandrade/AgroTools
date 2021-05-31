@@ -33,17 +33,14 @@ body {
 
 .heading-secondary {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-transform: uppercase;
     font-weight: 700;
     transition: all .2s;
     color: $color-grey-dark-3;
     letter-spacing: .2rem;
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
 
-    &:hover {
-        transform: scale(1.1);
-        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
-    }
 }
 
 .heading-primary-2 {
@@ -54,7 +51,7 @@ body {
 
     &--main {
         display: block;
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 400;
         letter-spacing: 1rem;
         border-bottom: 1px solid $color-white;

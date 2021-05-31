@@ -1,0 +1,42 @@
+.card {
+    position: relative;
+    background-color: $color-white-2;
+    height: 25rem;
+    border-radius: 3px;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+    &__heading {
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: $color-secondary;
+        height: 21%;
+        color: $color-white;
+        align-content: center;
+        width: 100%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem 0 1.5rem;
+    }
+
+    &__details {
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+
+        ul {
+            list-style: none;
+            margin: 0 auto;
+
+            li {
+                text-align: left;
+                font-size: 1.5rem;
+                font-weight: 400;
+                padding: 1rem;
+                color: $color-grey-dark-3;
+                border-bottom: 1px solid $color-grey-dark;
+                
+            }
+        }
+    }
+}

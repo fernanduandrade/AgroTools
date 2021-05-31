@@ -83,3 +83,33 @@
         transform: translateY(0);
     }
 }
+
+.btn-card {
+    width: 100%;
+    &:link,
+    &:visited {
+        font-size: 2rem;
+        position: absolute;
+        top: 85%;
+        text-transform: uppercase;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        color: $color-white;
+        background-color: $color-secondary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-white-3;
+        color: $color-secondary;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
