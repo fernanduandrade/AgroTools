@@ -3,7 +3,7 @@
 		"id": "1",
 		"título": "Quiz nº 1",
 		"usuário": "Fernando",
-		"dataCadastroPergunta": "2021/02/03",
+		"dataCadastroPergunta": "2021-02/-03",
 		"localização": {
 			"latitude": "-5.1697377",
 			"longitude": "-41.703652299999995"
@@ -11,7 +11,7 @@
 		"perguntas": [
 			"Qual o nome do seu primeiro gatinho?"
 		],
-		"dataCadastroResposta": "2021/02/28",
+		"dataCadastroResposta": "2021-02-28",
 		"respostas": [
 			"Billy"
 		],
@@ -21,7 +21,7 @@
 		"id": "2",
 		"título": "Quiz nº 2",
 		"usuário": "Troy",
-		"dataCadastroPergunta": "2021/03/01",
+		"dataCadastroPergunta": "2021-03-01",
 		"localização": {
 			"latitude": "-5.16977477",
 			"longitude": "-41.703652299785995"
@@ -30,7 +30,7 @@
 			"Possui conexão com fibra ótica?",
 			"Você tem um hobby?"
 		],
-		"dataCadastroResposta": "2021/03/03",
+		"dataCadastroResposta": "2021-03-03",
 		"respostas": [
 			"Sim",
 			"Não possuo nenhum tipo de hobby"
@@ -41,7 +41,7 @@
 		"id": "3",
 		"título": "Quiz nº 3",
 		"usuário": "Gabriela",
-		"dataCadastroPergunta": "2021/03/01",
+		"dataCadastroPergunta": "2021-03-01",
 		"localização": {
 			"latitude": "-5.74747474",
 			"longitude": "-41.9995"
@@ -50,7 +50,7 @@
 			"Qual sua idade?",
 			"Quantos celulares você possui?"
 		],
-		"dataCadastroResposta": "2021/03/01",
+		"dataCadastroResposta": "2021-03-01",
 		"respostas": [
 
 		],
@@ -60,7 +60,7 @@
 		"id": "4",
 		"título": "Quiz nº 4",
 		"usuário": "Akemi",
-		"dataCadastroPergunta": "2021/02/19",
+		"dataCadastroPergunta": "2021-02-19",
 		"localização": {
 			"latitude": "-56.1697377",
 			"longitude": "-41.71232139999995"
@@ -68,7 +68,7 @@
 		"perguntas": [
 			"Você gosta de vinho?"
 		],
-		"dataCadastroResposta": "2021/02/29",
+		"dataCadastroResposta": "2021/-02-29",
 		"respostas": [
 			
 		],
@@ -78,12 +78,12 @@
 		"id": "5",
 		"título": "Quiz nº 5",
 		"usuário": "Chad",
-		"dataCadastroPergunta": "2021/03/01",
+		"dataCadastroPergunta": "2021-03-01",
 		"localização": "",
 		"perguntas": [
 			"Você tem pet? Se sim qual o nome do seu pet?"
 		],
-		"dataCadastroResposta": "2021/03/02",
+		"dataCadastroResposta": "2021-03-02",
 		"respostas": [
 			"Sim uma gata, se chama Polly"
 		],

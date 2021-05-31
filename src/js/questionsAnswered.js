@@ -1,5 +1,3 @@
-import formatDate from "../utils/formatDate";
-
 window.onload = questionAnswered();
 
 function saveId(id){

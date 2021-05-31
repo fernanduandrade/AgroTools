@@ -1,4 +1,3 @@
-const formatDate = date => date.split("-").reverse().join("/");
-
-
-export default formatDate;
+function formatDate(date) { 
+    return date.split("-").reverse().join("/");
+}
