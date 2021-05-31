@@ -5,7 +5,7 @@ function saveId(id){
 }
 
 function createList(){
-    let wrapper = document.getElementById('list-wrapper');
+    let wrapper = document.getElementById('answeredQuizes');
 
     const apiUrl = "http://localhost:8001/quiz/"
 
@@ -14,19 +14,23 @@ function createList(){
         for (let i in quizData){
             if(quizData[i].respondido === false) {
                 const questions = `
-                    <div id="data-row">
-                    <div class="card size">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">${quizData[i].título}</h5>
-                            <hr>  
-                            <p class="text">Criado por: <strong>${quizData[i].usuário}</strong></p>
-                            <p class="text">Dia: <strong>${quizData[i].dataCadastroPergunta}</strong></p>
-                            <p class="text">Quantidade de perguntas: <strong>${quizData[i].perguntas.length}<strong></p>
-                            <a href="./responder-questionario.html" class="btn btn-block btn-dark" onclick="saveId('${quizData[i].id}')" id="button">Responder</a>
+                    <div class="col-1-of-3-card">    
+                        <div class="card u-margin-bottom-medium">
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--1">
+                                ${quizData[i].título}
+                                </span>
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li><strong>Criado por:</strong> ${quizData[i].usuário}</li>
+                                    <li><strong>Enviado dia:</strong> ${formatDate(quizData[i].dataCadastroResposta)}</li>
+                                    <li><strong>Quantidade de perguntas: </strong>${quizData[i].perguntas.length}</li>
+                                </ul>
+                            </div>
+                            <a href="./responder-questionario.html" class="btn-card" onclick="saveId('${quizData[i].id}')" id="button">Ver resultado &rarr;</a>
                         </div>
-                    </div>
-                    
-                    </div>
+                    </div>   
                 `
                 wrapper.innerHTML += questions;
             }

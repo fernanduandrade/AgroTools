@@ -25,8 +25,9 @@ function questionAnswered(){
                             </h4>
                             <div class="card__details">
                                 <ul>
-                                    <li><b>Criado por:</b> ${quizAnswered[i].usuário}</li>
-                                    <li><b>Respondido dia:</b> ${formatDate(quizAnswered[i].dataCadastroResposta)}</li>
+                                    <li><strong>Criado por:</strong> ${quizAnswered[i].usuário}</li>
+                                    <li><strong>Respondido dia:</strong> ${formatDate(quizAnswered[i].dataCadastroResposta)}</li>
+                                    <li><strong>Pergutnas respondida:</strong> ${quizAnswered[i].respostas.length}</li>
                                 </ul>
                             </div>
                             <a href="./visualizar-questionario.html" class="btn-card" onclick="saveId('${quizAnswered[i].id}')" id="button">Ver resultado &rarr;</a>
@@ -36,6 +37,8 @@ function questionAnswered(){
                 `
                 wrapper.innerHTML += questionarios;
             } 
+
+
         }
     });
 }
