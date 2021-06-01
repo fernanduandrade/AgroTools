@@ -1,5 +1,5 @@
 function newQuestion() {
-    const newQuestion = '<input style="margin-top: 10px;" type="text" class="form-control" id="perguntas" name="perguntas[]">';
+    const newQuestion = '<input type="text" class="form__input u-margin-bottom-medium" id="perguntas" name="perguntas[]">';
     document.getElementById('questions').innerHTML += newQuestion;
 }
 
