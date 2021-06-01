@@ -1,0 +1,46 @@
+.section-view {
+    padding: 3.5rem 0 5rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    background-color: $color-white-3;
+    width: 90vw;
+}
+
+.view {
+    
+    &__quiz {
+        width: 100%;
+        padding: 2rem 6rem;
+
+        
+    }
+
+    &__text {
+        font-size: 2rem;
+        text-align: left;
+        font-weight: normal;
+        color: $color-grey-dark-3;
+    }
+
+    &__container {
+        border: 2px solid $color-secondary;
+
+        &--question {
+            font-size: 2rem;
+            color: $color-white;
+            background-color: $color-secondary;
+
+            
+        }
+
+        &--answer {
+            font-size: 2rem;
+            color: $color-grey-dark-3;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+}
