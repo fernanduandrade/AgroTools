@@ -4,7 +4,7 @@ function newQuestion() {
 }
 
 function sendQuestion() {
-    const form = document.getElementById("main-form");
+    const form = document.getElementById("quizForm");
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 

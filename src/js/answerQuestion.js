@@ -49,7 +49,7 @@ function questionData() {
                 </div>
             </div>
 
-            <div class="form__group col-1-of-4">
+            <div class="form__group col-1-of-4-form">
                 <input type="date" class="form__input" id="dataCadastroResposta" name="dataCadastroResposta" required placeholder="Data">
                 <label class="form__label">Data da Resposta</label>
             </div>
