@@ -31,7 +31,7 @@ function questionData() {
         });
 
         const quizForm = `
-            <div class="u-margin-bottom-medium">
+            <div class="u-margin-bottom-small">
                 <h2 class="heading-secondary-title">
                     ${quizData.título}
                 </h2>

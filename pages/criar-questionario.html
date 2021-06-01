@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="../src/css/style.css">
-        <title>Quiz Maker | AgroTools</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Quiz Maker | AgroTools</title>
+</head>
 
-    <body>
-        <nav class="nav">
-            <a href="../index.html" class="nav__link">
-                AgroTools 
-            </a>
-        </nav>
-        <main>
-            <section class="section-form">
-                <div class="row">
-                    <div class="quiz">
-                        <div class="quiz__form">
-                            <form class="form" method="post" id="quizForm">
+<body>
+    <nav class="nav">
+        <a href="../index.html" class="nav__link">
+            AgroTools
+        </a>
+    </nav>
+    <main>
+        <section class="section-form u-margin-top-medium">
+            <div class="row">
+                <div class="quiz">
+                    <div class="quiz__form">
+                        <form class="form" method="post" id="quizForm">
 
-                                <div class=" u-margin-bottom-medium">
-                                    <h2 class="heading-secondary">
-                                        Crie um quiz agora
-                                    </h2>
-                                </div>
+                            <div class=" u-margin-bottom-medium">
+                                <h2 class="heading-secondary">
+                                    Crie um quiz agora
+                                </h2>
+                            </div>
 
-                                <div class="form__group ">
-                                    <input type="text" class="form__input" id="título" name="título"
-                                        placeholder="Título do questionário">
-                                    <label class="form__label">Título do questionário</label>
-                                </div>
-                                <div class="form__group">
-                                    <input type="text" class="form__input" id="usuário" name="usuário"
-                                        placeholder="Nome" required>
-                                    <label class="form__label">Nome</label>
-                                </div>
+                            <div class="form__group ">
+                                <input type="text" class="form__input" id="título" name="título"
+                                    placeholder="Título do questionário">
+                                <label class="form__label">Título do questionário</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="usuário" name="usuário" placeholder="Nome"
+                                    required>
+                                <label class="form__label">Nome</label>
+                            </div>
 
-                                <div class="form__group">
-                                    <input type="date" class="form__input col-1-of-4-form" id="dataCadastroPergunta"
-                                        name="dataCadastroPergunta" required>
-                                    <label class="form__label">Escolha uma data</label>
-                                </div>
-                                <div class="form__group" id="questions">
-                                    <input type="text" class="form__input" id="perguntas" name="perguntas[]"
-                                        placeholder="Qual ano você teve seu primeiro pet?" required>
-                                    <label class="form__label">Qual ano você teve seu primeiro pet?</label>
-                                </div>
+                            <div class="form__group">
+                                <input type="date" class="form__input col-1-of-4-form" id="dataCadastroPergunta"
+                                    name="dataCadastroPergunta" required>
+                                <label class="form__label">Escolha uma data</label>
+                            </div>
+                            <div class="form__group" id="questions">
+                                <input type="text" class="form__input" id="perguntas" name="perguntas[]"
+                                    placeholder="Qual ano você teve seu primeiro pet?" required>
+                                <label class="form__label">Qual ano você teve seu primeiro pet?</label>
+                            </div>
 
-                                <div class="form__group">
-                                    <a href="#" onclick="newQuestion()" class="btn-text">Adicionar pergunta +</a>
-                                </div>
+                            <div class="form__group">
+                                <a href="#" onclick="newQuestion()" class="btn-text">Adicionar pergunta +</a>
+                            </div>
 
-                                <div class="form_group">
-                                    <button type="submit" onclick="sendQuestion()" class="btn btn--purple">Enviar
-                                        Questionário</button>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="form_group">
+                                <button type="submit" onclick="sendQuestion()" class="btn btn--purple">Enviar
+                                    Questionário</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 
-    </body>
+</body>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script src="../src/js/questionMaker.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="../src/js/questionMaker.js"></script>
 
 </html>

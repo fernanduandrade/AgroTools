@@ -107,6 +107,9 @@ body {
 .u-margin-top-small {
   margin-top: 2.1rem !important; }
 
+.u-margin-top-medium {
+  margin-top: 4rem !important; }
+
 .u-margin-top-big {
   margin-top: 8rem !important; }
 
@@ -345,7 +348,7 @@ body {
           border-bottom: 1px solid #777; }
 
 .nav {
-  background-color: #FFFAFA;
+  background-color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
   .nav__link {
     text-decoration: none;
