@@ -43,6 +43,18 @@ body {
 
 }
 
+.heading-secondary-title {
+    text-align: left;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all .2s;
+    color: $color-grey-dark-3;
+    letter-spacing: .2rem;
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+
+}
+
 .heading-primary-2 {
     color: $color-white;
     text-transform: uppercase;

@@ -16,52 +16,53 @@ function showPosition(position) {
 }
 
 function questionData() {
-    const wrapper = document.getElementById('form-wrapper')
+    const wrapper = document.getElementById('quizForm')
     const quizId = JSON.parse(localStorage.getItem("quizId"));
 
     axios.get(`http://localhost:8001/quiz/${quizId}`).then((res) => {
         const quizData = res.data;
         questions = quizData.perguntas.map(item => {
             return `
-                <p class="question"><strong>${item}<strong></p>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="respostas[]" id="respostas" required> 
+                <p class="form__text"><strong>${item}<strong></p>
+                <div class="form__group">
+                    <input type="text" class="form__input" name="respostas[]" id="respostas" required> 
                 </div>
         `
         });
 
-        const questionCard = `
-            <form id="main-form" class=" container rounded" method="POST">
-                <h1 class="text-center">QUIZ - ${quizData.título}</h1>
-                <hr>
-                <div class="container>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col">
-                                <label class="label-text">Latitude</label>
-                                <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude">
-                            </div>
-                            <div class="col">
-                            <label class="label-text">Longitude</label>
-                            <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude">
-                        </div>
-                    </div>
+        const quizForm = `
+            <div class="u-margin-bottom-medium">
+                <h2 class="heading-secondary-title">
+                    ${quizData.título}
+                </h2>
+            </div>
 
-                    <div class="form-group">
-                        <label class="label-text">Data da Resposta</label>
-                        <input type="date" class="form-control" id="dataCadastroResposta" name="dataCadastroResposta" required placeholder="Data">
-                    </div>
+            <div class="row">
+                <div class="col-1-of-2-form u-margin-bottom-medium">
+                    <label class="form__label">Latitude</label>
+                    <input type="text" class="form__input" id="latitude" name="latitude" placeholder="Latitude">
+                </div>
 
-                    ${questions.join('')}
-                    </div>  
-                <button type="submit" id="questionario" class="btn btn-block btn-primary mb-2">Enviar Respostas</button>
-            </form>
+                <div class="col-1-of-2-form u-margin-bottom-medium">
+                    <label class="form__label">Longitude</label>
+                    <input type="text" class="form__input" id="longitude" name="longitude" placeholder="Longitude">
+                </div>
+            </div>
+
+            <div class="form__group col-1-of-4">
+                <input type="date" class="form__input" id="dataCadastroResposta" name="dataCadastroResposta" required placeholder="Data">
+                <label class="form__label">Data da Resposta</label>
+            </div>
+
+            ${questions.join('')}
+
+            <button type="submit" id="questionario" class="btn btn--purple">Enviar Respostas</button>
 
         `
 
-        wrapper.innerHTML += questionCard;
+        wrapper.innerHTML += quizForm;
 
-        const form = document.getElementById("main-form");
+        const form = document.getElementById("quizForm");
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 

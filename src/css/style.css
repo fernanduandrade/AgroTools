@@ -71,6 +71,16 @@ body {
   letter-spacing: .2rem;
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
+.heading-secondary-title {
+  text-align: left;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all .2s;
+  color: #333;
+  letter-spacing: .2rem;
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
 .heading-primary-2 {
   color: #fff;
   text-transform: uppercase;
@@ -251,6 +261,12 @@ body {
   display: block;
   transition: all .3s; }
 
+.form__text {
+  font-size: 1.6rem;
+  text-align: left;
+  font-weight: normal;
+  color: #333; }
+
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
@@ -325,3 +341,15 @@ body {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-1-of-3-card {
     width: calc((100% - 2.3 * 6rem) / 3); }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-2-form {
+    width: calc((94.10% - 6rem) / 2); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
