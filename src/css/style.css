@@ -40,8 +40,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -77,7 +76,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   transition: all .2s;
-  color: #AE338F;
+  color: #333;
   letter-spacing: .2rem;
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
@@ -345,6 +344,9 @@ body {
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #777; }
 
+.nav {
+  background-color: #FFFAFA; }
+
 .header {
   height: 80vh;
   position: relative; }
@@ -367,7 +369,7 @@ body {
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-1-of-3-card {
-    width: calc((100% - 2.3 * 6rem) / 3); }
+    width: calc((100% - 3 * 6rem) / 3); }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-2-form {
